@@ -28,7 +28,7 @@ public class ParticleModifier : MonoBehaviour
             float normalizedDistance = Mathf.Clamp01(distance / 80f);
 
             float currentY = particles[i].position.y;
-            float targetY = 1.0f; 
+            float targetY = 1.0f;
             float noise = Random.Range(-0.1f, 0.1f);
             float newY = Mathf.Lerp(currentY, targetY + noise, normalizedDistance);
 
