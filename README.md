@@ -9,7 +9,7 @@ CS410: Game Programming Assignment 2 | John Lemon's Haunted Jaunt Extended
 
 ## Work Distribution
 
-### - Ryan Jacques
+### Ryan Jacques
 
-    - Created repository and built initial project
-    - Created particle system (Ghost poop). Players can interact with particles, and position is updated via the `ParticleModifier.cs` script.
+- Created repository and built initial project
+- Created particle system (Ghost poop). Players can interact with particles, and position is updated via the `ParticleModifier.cs` script.
