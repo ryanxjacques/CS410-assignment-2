@@ -13,3 +13,13 @@ CS410: Game Programming Assignment 2 | John Lemon's Haunted Jaunt Extended
 
 - Created repository and built initial project
 - Created particle system (Ghost poop). Players can interact with particles, and position is updated via the `ParticleModifier.cs` script.
+
+### Joseph Erlinger
+
+Added **sprint feature** to `PlayerMovement.cs` that uses **interpolation** to smoothly transition from walking speed to running speed. To sprint, the player can press the shift button while moving using the WASD keys. 
+
+In `PlayerMovement.cs`
+- Created `Lerp()`.
+- Created `walkLerpUpdate()`.
+- Modified `FixedUpdate` to detect presses to the shift button.
+- Modified `OnAnimatorMove` to increase speed of player when sprinting.

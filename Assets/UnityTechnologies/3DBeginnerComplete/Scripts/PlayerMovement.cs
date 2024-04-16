@@ -8,7 +8,12 @@ public class PlayerMovement : MonoBehaviour
     public InputAction MoveAction;
     
     public float turnSpeed = 20f;
-
+    // ---
+    // Sprint Feature
+    private float walkLerp = 0f;
+    public float walkSpeed = 1f;
+    // ---
+    // back to source code:
     Animator m_Animator;
     Rigidbody m_Rigidbody;
     AudioSource m_AudioSource;
@@ -37,6 +42,24 @@ public class PlayerMovement : MonoBehaviour
         bool hasHorizontalInput = !Mathf.Approximately (horizontal, 0f);
         bool hasVerticalInput = !Mathf.Approximately (vertical, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
+        
+        // --------------
+        // Sprint Feature 
+        bool shiftPressed = false;
+        
+        // Check if shift button is pressed
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            shiftPressed = true;
+
+        // Running only if walking AND shift pressed.
+        bool isRunning = isWalking && shiftPressed;
+
+        // Update smooth transition from walking and sprinting.
+        walkLerpUpdate(isRunning);
+
+        // --------------
+        // Back to source code
+
         m_Animator.SetBool ("IsWalking", isWalking);
         
         if (isWalking)
@@ -55,9 +78,43 @@ public class PlayerMovement : MonoBehaviour
         m_Rotation = Quaternion.LookRotation (desiredForward);
     }
 
+    // Gradually increase or decrease walkSpeed if player is running.
+    void walkLerpUpdate(bool isRunning)
+    {
+        float smoothFactor = 0.05f; 
+        if (isRunning)
+        {
+            walkLerp += smoothFactor;
+            walkLerp = Mathf.Min(walkLerp, 1.0f);
+        } else {
+            walkLerp -= smoothFactor;
+            walkLerp = Mathf.Max(walkLerp, 0.0f);
+
+        }
+        // minSpeed, maxSpeed = 1.0, 5.0 respectively. 
+        walkSpeed = Lerp(1.0f, 5.0f, walkLerp);
+    }
+
+    // Linear Interpolation Function.
+    static float Lerp(float minVal, float maxVal, float lerpFactor)
+    {
+        // minVal is the lowest value Lerp can return
+        // maxVal is the highest value Lerp can return
+        // lerpFactor is a number between 0 and 1.
+        // A lerpFactor of 0 will return 0% of maxVal and 100% of minVal.
+        // A lerpFactor of 1 will return 100% of maxVal and 0% of minVal.
+        
+        // Clamp t between 0 and 1 to ensure interpolation stays within bounds
+        t = Mathf.Clamp01(t);
+        
+        // Perform linear interpolation
+        return minVal + (maxVal - minVal) * lerpFactor;
+    }
+
     void OnAnimatorMove ()
     {
-        m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
+        // Modification: Added '* walkSpeed' to incorporate the sprint feature.
+        m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * walkSpeed * m_Animator.deltaPosition.magnitude);
         m_Rigidbody.MoveRotation (m_Rotation);
     }
 }
