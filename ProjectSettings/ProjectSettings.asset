@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: e06b61dd8d57c414dba65a91f88b4db4
+  productGUID: 6c9cc2f3b51d43f4f9efc1f57d903362
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -160,8 +160,7 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier:
-    Standalone: com.DefaultCompany.2023-3d-beginner
+  applicationIdentifier: {}
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -745,14 +744,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Assignment 2
+  metroPackageName: CS410-assignment-2
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Assignment 2
+  metroApplicationDescription: CS410-assignment-2
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -824,7 +823,7 @@ PlayerSettings:
   cloudProjectId: 79156d99-331c-4b7e-af8a-7ef99bb164f7
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Assignment 2
+  projectName: 
   organizationId: ryanxjacques
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
