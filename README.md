@@ -23,3 +23,8 @@ In `PlayerMovement.cs`
 - Created `walkLerpUpdate()`.
 - Modified `FixedUpdate` to detect presses to the shift button.
 - Modified `OnAnimatorMove` to increase speed of player when sprinting.
+
+### Jerin Spencer
+- added "Thud Machine"
+    - picture of obama
+    - trigger that makes obama visible and plays "vine boom" when something moves through it
