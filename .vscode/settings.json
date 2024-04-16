@@ -51,6 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Assignment 2.sln",
-    "editor.codeLens": false,
+    "dotnet.defaultSolution": "pers-fork-CS410-assigment2-.sln",
+    "editor.codeLens": false
 }
