@@ -105,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
         // A lerpFactor of 1 will return 100% of maxVal and 0% of minVal.
         
         // Clamp t between 0 and 1 to ensure interpolation stays within bounds
-        t = Mathf.Clamp01(t);
+        lerpFactor = Mathf.Clamp01(t);
         
         // Perform linear interpolation
         return minVal + (maxVal - minVal) * lerpFactor;
