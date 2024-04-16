@@ -78,6 +78,28 @@ public class PlayerMovement : MonoBehaviour
         m_Rotation = Quaternion.LookRotation (desiredForward);
     }
 
+    public Vector3 retPosition(){
+        var pos = MoveAction.ReadValue<Vector3>();
+        return pos;
+    }
+    // function from painting.cs
+    /*
+    void paintingResponse(Vector3 painting){
+
+        // gets player position 
+        var playerPos = PlayerObject.transform.position;
+        float hor = playerPos.Normalize.x;
+        float ver = playerPos.Normalize.y;
+
+        // checks using dot product if the player is facing the right direction for the teleportation
+        if((painting.x*hor)+(painting.y*ver) > 45){
+
+            // teleports player to end of the level
+            transform.position = new Vector3(13f,1f,1.5f);
+        }
+    }*/
+
+
     // Gradually increase or decrease walkSpeed if player is running.
     void walkLerpUpdate(bool isRunning)
     {
