@@ -28,3 +28,8 @@ In `PlayerMovement.cs`
 - added "Thud Machine"
     - picture of obama
     - trigger that makes obama visible and plays "vine boom" when something moves through it
+
+### Carlos Villarreal-Elizondo
+- added "Painting" script
+    - added painting empty object into the game
+    - added trigger that will teleport player to skybox when the painting is approached from a certain angle using dot product
